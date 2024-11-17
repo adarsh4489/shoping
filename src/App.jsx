@@ -9,8 +9,8 @@ import Cart from './Pages/Cart';
 function App() {
 
   return (
-    <div>
-      <div> 
+    <div className='full max-w-[1400px] mx-auto'>
+      <div className='w-full'> 
         <Navbar />
       </div>
       <Routes>
