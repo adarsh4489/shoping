@@ -6,7 +6,7 @@ const Home = () => {
   return (
     <div className=' w-full flex flex-col'>
       <h2 className='mx-auto text-3xl font-semibold underline my-4'>Our Products</h2>
-     <div className='products-wrapper flex '>
+     <div className='products-wrapper w-full  flex flex-wrap '>
         {data.map((item) => (
          
             <Product

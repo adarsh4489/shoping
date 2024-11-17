@@ -20,9 +20,9 @@ const Product = ({ id, name, price, image }) => {
   };
 
   return (
-    <div className="product-card border-2 px-2 py-2 flex flex-col items-center">
-      <div className="px-2 py-2 object-cover">
-        <img className="" src={image} alt="product image" />
+    <div className="product-card border-2 px-2 py-2 flex flex-col items-center w-1/4 ">
+      <div className=" object-cover">
+        <img className="w-[290px] h-[300px]" src={image}  alt="product image" />
       </div>
       <h3 className="font-semibold">{name}</h3>
       <p>{price}</p>
