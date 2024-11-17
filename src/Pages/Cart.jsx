@@ -13,7 +13,7 @@ setTotalAmount(cart.reduce((acc,curr)=>acc + curr.price,0));
   },[cart])
 
   return (
-    <div className='w-full flex'>
+    <div className='w-full flex justify-center my-4 '>
       {
         cart.length > 0 ? (
           <div className='flex gap-4 w-2/3 justify-between mx-auto'>
