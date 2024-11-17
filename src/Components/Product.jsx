@@ -8,7 +8,7 @@ const Product = ({ id, name, price, image }) => {
   const { cart } = useSelector((state) => state);
 
   // Determine if the product is already in the cart directly within the button logic
-  const itemExistsInCart = cart.some((item) => item.id === id);
+  const itemExistsInCart = cart.some((id) => id === id);
 
   // Add item to cart
   const handleAddToCart = () => {
