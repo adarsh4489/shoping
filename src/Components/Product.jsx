@@ -2,32 +2,33 @@ import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { add, remove } from "../Redux/Slices/CartSlice";
 import { toast } from "react-toastify";
-import ProductData from "../assets/ProductData";
 
 const Product = ({ id, name, price, image, status }) => {
   console.log("id", id);
   const dispatch = useDispatch();
   const { cart } = useSelector((state) => state);
-  // Determine if the product is already in the cart directly within the button logic
+  useEffect (()=>{
+
+  },[status])
+cart.forEach(element => {
+  if(element.id==id)
+    status=true;
+  
+});
+
   console.log("cart", cart);
   const itemExistsInCart = cart.some((id) => id === id);
-  // console.log("items",itemExistsInCart);
-
-  // Add item to cart
+  
   const handleAddToCart = () => {
     dispatch(add({ id, name, price, image }));
-    const val = ProductData.find(item => item.id == id);
-    val.status = true;
-    console.log("products", ProductData);
+ status=true;
     toast.success("Item Added to cart");
   };
-  useEffect(() => {
-    console.log("---->")
-  }, [handleAddToCart, handleAddToCart])
 
   const handleRemoveFromCart = () => {
-    dispatch(remove({ id }));
+    dispatch(remove({id}));
     toast.success("Item Removed from your cart");
+    status=false;
   };
 
 

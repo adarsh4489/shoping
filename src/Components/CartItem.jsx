@@ -7,7 +7,7 @@ import { toast } from 'react-toastify';
 const CartItem = ({item,itemindex}) => {
     const dispatch=useDispatch();
     const removeFromCart=()=>{
-        dispatch(remove(item.id));
+        dispatch(remove({id:item.id}));   //this is a number but in card slice we are takin it as object so we have to change it.
         toast.success("Item Removed");
     };
 

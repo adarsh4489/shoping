@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import data from "../assets/ProductData";
 import Product from "../Components/Product";
 import Cart from "./Cart";
@@ -15,15 +15,19 @@ const Home = () => {
         Our Products
       </h2>
       <div className="products-wrapper w-full  flex flex-wrap ">
-{data.map((item) => (
+{data.map((item) => {
+ 
+  return(
+  
           <Product
             id={item?.id}
             name={item.name}
             price={item.price}
             image={item.image}
             status={item.status}
+            
           />
-        ))}
+        )})}
       </div>
     </div>
   );
